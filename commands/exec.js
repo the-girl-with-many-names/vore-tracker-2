@@ -13,8 +13,8 @@ client.registerCommand('exec', (msg, args) => {
             }
             let after = now()    
 
-            let retStr = `${stdout}\n\n` +
-            `executed in ${(after - before).toFixed(3)} ms`
+            let retStr = `\`\`\`${stdout}\n\n` +
+            `executed in ${(after - before).toFixed(3)} ms\`\`\``
 
             client.createMessage(msg.channel.id, retStr)
         } catch (err) {

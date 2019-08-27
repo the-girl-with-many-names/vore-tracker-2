@@ -28,9 +28,9 @@ pm2.connect(function(err) {
     }
 
     pm2.start({
-        script: 'index.js'
+        script: 'index.js',
+        maxRestarts: 10
     }, function(err, apps) {
-        pm2.killDaemon()
         pm2.disconnect()
         if (err) throw err
         return
