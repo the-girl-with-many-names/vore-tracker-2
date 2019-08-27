@@ -5,7 +5,6 @@ const auth = require('./auth.json')
 const config = require('./config.json')
 const chalk = require('chalk')
 
-
 // start the eris commandclient
 client = new Eris.CommandClient(auth.token, {}, {
     description: 'tracks vore and stuff',
