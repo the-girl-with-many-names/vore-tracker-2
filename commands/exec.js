@@ -7,10 +7,6 @@ client.registerCommand('exec', (msg, args) => {
 
     exec(args.join(' '), (err, stdout, stderr) => {
         try {
-            if (err) {
-                console.error(`exec error: ${err}`)
-                return
-            }
             let after = now()    
 
             let retStr = `\`\`\`${stdout}\n\n` +
