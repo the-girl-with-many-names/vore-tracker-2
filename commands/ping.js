@@ -1,5 +1,3 @@
-const now = require('performance-now')
-
 client.registerCommand('ping', (msg) => {
     client.createMessage(msg.channel.id, 'Pinging...').
     then(newMsg => {

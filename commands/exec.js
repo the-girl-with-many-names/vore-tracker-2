@@ -5,7 +5,7 @@ const { exec } = require('child_process')
 client.registerCommand('exec', (msg, args) => {
     let before = now()
 
-    exec(args.join(' '), (err, stdout, stderr) => {
+    exec(args.join(' '), (e, stdout, stderr) => {
         try {
             let after = now()    
 
@@ -13,7 +13,7 @@ client.registerCommand('exec', (msg, args) => {
             `executed in ${(after - before).toFixed(3)} ms\`\`\``
 
             client.createMessage(msg.channel.id, retStr)
-        } catch (err) {
+        } catch (e) {
             let retStr = `\`${stderr}\``
             
             client.createMessage(msg.channel.id, `${retStr}`)

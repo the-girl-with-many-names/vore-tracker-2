@@ -1,4 +1,5 @@
 // we declare the variables required to run the client
+const io = require('@pm2/io')
 const Eris = require('eris')
 const auth = require('./auth.json')
 const config = require('./config.json')
@@ -14,6 +15,16 @@ client = new Eris.CommandClient(auth.token, {}, {
 })
 
 require('./commands/meta/cmdLoader')
+
+// pm2 stuff :tm:
+io.init({
+  catchExceptions: boolean = true,
+  metrics: {
+    network: {
+      ports: true
+    }
+  }
+})
 
 // when the bot is ready, log this
 client.on('ready', () => {
