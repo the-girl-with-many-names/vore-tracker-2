@@ -31,8 +31,10 @@ pm2.connect(function(err) {
     pm2.start({
         script: 'index.js'
     }, function(err, apps) {
-        pm2.disconnect();
-        if (err) throw err;
+        pm2.killDaemon()
+        pm2.disconnect()
+        if (err) throw err
+        return
     })
 })
 

@@ -3,14 +3,14 @@ const now = require('performance-now')
 const util = require('util')
 
 client.registerCommand('eval', (msg, args) => {
-    let before = now();
+    let before = now()
 
     try {
         let evald = eval(args.join(' '))
         evald = util.inspect(evald)
 
         if(evald && evald.length > 1800) evald = evald.substring(0, 1800)
-        let after = now();
+        let after = now()
 
         let retStr = `\`\`\`javascript\n` +
         `${evald}\n\n` +
